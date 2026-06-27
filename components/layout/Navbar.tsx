@@ -1,10 +1,10 @@
 const links = [
-  "About",
-  "Experience",
-  "Projects",
-  "Recognition",
-  "Learning",
-  "Contact",
+  { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Recognition", href: "#recognition" },
+  { label: "Learning", href: "#learning" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -25,18 +25,16 @@ export default function Navbar() {
         </div>
 
         <nav className="hidden gap-8 md:flex">
-
-          {links.map((link) => (
-            <a
-              key={link}
-              href="#"
-              className="text-sm font-medium text-zinc-600 transition hover:text-black"
-            >
-              {link}
-            </a>
-          ))}
-
-        </nav>
+  {links.map((link) => (
+    <a
+      key={link.label}
+      href={link.href}
+      className="text-sm font-medium text-zinc-600 transition hover:text-black"
+    >
+      {link.label}
+    </a>
+  ))}
+</nav>
 
       </div>
     </header>
